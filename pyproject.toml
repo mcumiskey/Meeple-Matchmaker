@@ -13,6 +13,11 @@ plotly = "^5.24.1"
 seaborn = "^0.13.2"
 scikit-learn = "^1.5.2"
 pyspark = "^3.5.3"
+nltk = "^3.9.1"
+nbformat = "^5.10.4"
+spellchecker = "^0.4"
+pyspellchecker = "^0.8.1"
+setuptools = "^75.3.0"
 
 
 [tool.poetry.group.dev.dependencies]
