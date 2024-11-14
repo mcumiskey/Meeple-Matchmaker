@@ -14,8 +14,11 @@ buy-in: This could be useful for board
 
 The dataset being used for this project is from [kaggle](https://www.kaggle.com/datasets/threnjen/board-games-database-from-boardgamegeek), sourced from the BGG API. 
 
-**Add graphs here / Tell The Story**
-- Key Features (Rating theme mechanics)
+![alt text](image-2.png)
+
+Games with a lot of reviews were not necessarily the most popular! Explore more [here](Appendices/EDA.ipynb) 
+
+ Key Features of the Data
 - Highest Rated
 - Avg. Ratings per User 
 - Common Themes / Mechanics
@@ -30,28 +33,21 @@ Limitations:
 - Analysis from 1960 to 2021 
 
 # The Process 
-![](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmiro.medium.com%2Fmax%2F1064%2F1*mz9tzP1LjPBhmiWXeHyQkQ.png&f=1&nofb=1&ipt=ade22d99e80603cf66b316c3ff0d6ebee32347cfbea21eec5e049cf044431b97&ipo=images)
-add source 
 ### Collaborative Filtering
+![if two users are similar, suggest them games the other likes](image.png)
+
 Collaborative filtering is a recommendation technique that predicts a user's preferences based on the past interactions of similar users. It leverages user-item ratings to identify patterns and make personalized recommendations without requiring explicit knowledge of the items themselves. 
 
 The Surprise library is a Python library built specifically for building and evaluating recommendation systems, particularly for collaborative filtering.
 
 ### Content-Based Filtering 
-Content-based filtering is a recommendation technique that suggests items to users based on the attributes of the items and the user's past preferences. It analyzes features such as keywords, genres, or other item characteristics to recommend similar items to those the user has interacted with previously.
+![if a user likes one game, they may like something else similar](image-1.png)
+
+Content-based filtering is a recommendation technique that suggests items to users based on the attributes of the items and the user's past preferences. It analyzes features such as keywords, genres, or other item characteristics to recommend similar items to those the user has interacted with previously. I used SVD from the [surprise](https://surpriselib.com/) library for my final model. 
 
 #### Using Jaccard Similarity
 
-Board Game similarity was determined via  **Jaccard Similarity** between the themes and mechanics. 
-
-```
-Jaccard Similarity = (number of observations in both sets) / (number in either set)
-```
-Developed by Paul Jaccard, the Jaccard Similarity returns a value between 0 to 1. The closer to 1, the more similar the two sets of data.
-
-### The Influencer 
-In addition to these personalized recommendations, there is a secret agent at play. When a user is recommended a product that is on our 'influencer' list, that product is highlighted to encourage the user to check it out. 
-
+I experimented with both  **Jaccard Similarity** and **Cosine distance** for comparing item similarity, and after testing, decided to use cosine distance. 
 
 # Hybrid function: Combine collaborative and content-based scores
 
@@ -64,8 +60,10 @@ The Alpha represents the 'Weight' of the collaborative score.
 # The Results 
 ![Meeple Circus](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.boardgamequest.com%2Fwp-content%2Fuploads%2F2017%2F12%2FMeeple-Circus-Game-Experience.jpg&f=1&nofb=1&ipt=827b94c331489562e5ca20b0953e612c8d9927a2b4c81cc08c7e4446a4beca49&ipo=images)
 
-ADD ONCE IN
-## Users 
+RMSE is a way to measure how far off the recommendations system’s predictions  are from actual ratings that users gave. 
+
+
+My Hybrid system's RMSE was 1.05, which means that on average, the hybrid system's recommendations are about 1.05 points away from the actual ratings given by users.
 
 
 # Appendices 
@@ -82,5 +80,10 @@ Created neighbors for predictions [here](Appendices/KNN-and-Pyspark.ipynb)
 Natural Language Processing (NLP) for classification involves using algorithms to automatically analyze and categorize text data into predefined categories or labels. This typically involves preprocessing text (e.g., tokenization, stemming, removing stop words), converting it into numerical representations (such as TF-IDF, word embeddings, or bag-of-words), and then training a machine learning model (like Naive Bayes, SVM, or deep learning models) to predict the category of a given text based on its content. 
 
 Attempted to categorize similar games [here](Appendices/NLP.ipynb) 
+
+## [Hybrid](Appendices/Hybrid.ipynb) 
+A shortcut to the hybrid system. 
+
+Attempted to categorize similar games [here](Appendices/Hybrid.ipynb) 
 
 
