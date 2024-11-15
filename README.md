@@ -118,6 +118,6 @@ Attempted to categorize similar games [here](Appendices/NLP.ipynb)
 ## [Hybrid](Appendices/Hybrid.ipynb) 
 A shortcut to the hybrid system. 
 
-Attempted to categorize similar games [here](Appendices/Hybrid.ipynb) 
+Avalible [here](Appendices/Hybrid.ipynb) 
 
 
