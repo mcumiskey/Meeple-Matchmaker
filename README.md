@@ -65,7 +65,7 @@ After filling in all the missing values, the system can recommend items that a u
 ### Content-Based Filtering 
 ![if a user likes one game, they may like something else similar](images/image-1.png)
 
-Content-Based Filtering focuses on how similar ite
+Content-Based Filtering focuses on recomending items that are similar to other items in the dataset. IE: If someone likes Ticket To Ride, they might also like Ticket To Ride: Europe (or Brass: Birmingham), as they have similar mechanics and themes. 
 
 I experimented with both  **Jaccard Similarity** and **Cosine distance** for comparing item similarity using themes and mechanics, and after testing, decided to use **cosine distance** for the final system. 
 
