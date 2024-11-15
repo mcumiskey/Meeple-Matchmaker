@@ -69,6 +69,8 @@ Content-Based Filtering focuses on recomending items that are similar to other i
 
 I experimented with both  **Jaccard Similarity** and **Cosine distance** for comparing item similarity using themes and mechanics, and after testing, decided to use **cosine distance** for the final system. 
 
+To provide a predictive rating for a user and a new game, I used the mean of the top n similar games that the user had rated.  
+
 #### Jaccard Similarity
 
 The Jaccard Similarity measures the similarity between two sets by comparing the number of common elements they share relative to the total number of unique elements across both sets.
